@@ -6,7 +6,7 @@ int main() {
 	char user_choice;
 	for (;;)
 	{
-		cout << "\nWhat are you gonna buy?" << " Select \"t\" for tangerines, \n \"c\" for christmas" <<
+		cout << "\nWhat are you gonna buy?" << " Select \"t\" for tangerines, \n \"c\" for christmas " <<
 			"tree, \"b\" for christmas ball, \"r\" for tree topper, \"0\" if you want to exit " 
 			<< "and \"1\" if you want to end with current customer: ";
 		cin >> user_choice;
