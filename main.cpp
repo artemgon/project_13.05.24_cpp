@@ -2,14 +2,15 @@
 using namespace std;
 
 int main() {
-	int price, revenue = 0, sum = 0, user_choice, quantity, discount, t_quantity = 100, c_quantity = 30, b_quantity = 70, r_quantity = 30;
+	int price, revenue = 0, sum = 0, quantity, discount, t_quantity = 100, c_quantity = 30, b_quantity = 70, r_quantity = 30;
+	char user_choice;
 	for (;;)
 	{
-		cout << "What are you gonna buy?" << " Select \"t\" for tangerines, \n \"c\" for christmas" <<
-			"tree, \"b\" for christmas ball, \"r\" for tree topper, 0 if you want to exit " 
-			<< "and 1 if you want to end with current customer: ";
+		cout << "\nWhat are you gonna buy?" << " Select \"t\" for tangerines, \n \"c\" for christmas" <<
+			"tree, \"b\" for christmas ball, \"r\" for tree topper, \"0\" if you want to exit " 
+			<< "and \"1\" if you want to end with current customer: ";
 		cin >> user_choice;
-		if (user_choice == 0) break;
+		if (user_choice == '0') break;
 		switch (user_choice)
 		{
 		case 't':
@@ -23,12 +24,12 @@ int main() {
 			}
 			else {
 				t_quantity -= quantity;
-				cout << "Are there any discounts?(type 'y' for yes and 'n' for no)";
+				cout << "Are there any discounts?(type 'y' for yes and 'n' for no): ";
 				cin >> user_choice;
 				switch (user_choice)
 				{
 				case 'y':
-					cout << "Please, enter the discount";
+					cout << "Please, enter the discount:";
 					cin >> discount;
 					sum += price * quantity - price * quantity / discount;
 					cout << "The price is " << price * quantity - price * quantity / discount;
@@ -56,12 +57,12 @@ int main() {
 			}
 			else {
 				c_quantity -= quantity;
-				cout << "Are there any discounts?(type 'y' for yes and 'n' for no)";
+				cout << "Are there any discounts?(type 'y' for yes and 'n' for no): ";
 				cin >> user_choice;
 				switch (user_choice)
 				{
 				case 'y':
-					cout << "Please, enter the discount";
+					cout << "Please, enter the discount:";
 					cin >> discount;
 					sum += price * quantity - price * quantity / discount;
 					cout << "The price is " << price * quantity - price * quantity / discount;
@@ -89,12 +90,12 @@ int main() {
 			}
 			else {
 				b_quantity -= quantity;
-				cout << "Are there any discounts?(type 'y' for yes and 'n' for no)";
+				cout << "Are there any discounts?(type 'y' for yes and 'n' for no):";
 				cin >> user_choice;
 				switch (user_choice)
 				{
 				case 'y':
-					cout << "Please, enter the discount";
+					cout << "Please, enter the discount:";
 					cin >> discount;
 					sum += price * quantity - price * quantity / discount;
 					cout << "The price is " << price * quantity - price * quantity / discount;
@@ -127,7 +128,7 @@ int main() {
 				switch (user_choice)
 				{
 				case 'y':
-					cout << "Please, enter the discount";
+					cout << "Please, enter the discount:";
 					cin >> discount;
 					sum += price * quantity - price * quantity / discount;
 					cout << "The price is " << price * quantity - price * quantity / discount;
@@ -144,9 +145,9 @@ int main() {
 				}
 				break;
 			}
-		case 1: 
+		case '1':
 			cout << "The sum is " << sum;
-			cout << "The revenue is " << revenue;
+			cout << "\nThe revenue is " << revenue;
 			sum = 0;
 			break;
 		default:
